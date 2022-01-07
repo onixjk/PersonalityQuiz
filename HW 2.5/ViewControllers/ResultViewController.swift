@@ -9,14 +9,46 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    // 1. Передать сюда массив с ответами
-    // 2. Определить наиболее часто встречающийся тип животного
-    // 3. Отобразить результат в соответствии с этим животным
+    // MARK: - IB Outlets
     
-    // ------4. Избавиться от кнопки возврата на предыдущий экран
-
+    @IBOutlet weak var animalLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    // MARK: - Public Properties
+    
+    var results: [Answer]!
+    
+    // MARK: - Override Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.hidesBackButton = true
+        
+        showResult()
+        
+    }
+    
+    // MARK: - Private Methods
+    
+    private func showResult() {
+        var frequentAnimal: [Animal : Int] = [:]
+        
+        let animals = results.map { $0.animal }
+        
+        for animal in animals {
+            if let value = frequentAnimal[animal] {
+                frequentAnimal.updateValue(value + 1, forKey: animal)
+            } else {
+                frequentAnimal[animal] = 1
+            }
+        }
+        
+        let sortedFrequentAnimal = frequentAnimal.sorted { $0.value > $1.value }
+        
+        if let mostFrequencyAnimal = sortedFrequentAnimal.first?.key {
+            animalLabel.text = "Вы - \(mostFrequencyAnimal.rawValue)"
+            descriptionLabel.text = "Вы - \(mostFrequencyAnimal.rawValue)"
+        }
     }
 }

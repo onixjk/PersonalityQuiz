@@ -291,7 +291,7 @@
                         <outletCollection property="multipleSwitches" destination="2cX-pe-bQM" collectionClass="NSMutableArray" id="miZ-Su-zzS"/>
                         <outletCollection property="rangedLabels" destination="UbV-ac-Upp" collectionClass="NSMutableArray" id="LKN-hR-ddv"/>
                         <outletCollection property="rangedLabels" destination="8aj-lx-lS2" collectionClass="NSMutableArray" id="JsP-Si-Uts"/>
-                        <segue destination="ybD-fs-ro5" kind="presentation" identifier="showResult" modalPresentationStyle="fullScreen" id="pSP-fU-8Xc"/>
+                        <segue destination="ybD-fs-ro5" kind="show" identifier="showResult" id="pSP-fU-8Xc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z19-mq-Pzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,11 +339,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animalLabel" destination="bIB-Ip-f7f" id="QHd-WZ-ZGa"/>
+                        <outlet property="descriptionLabel" destination="ubD-vy-JkF" id="Gg3-Tb-qAh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKR-tJ-42c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="WWM-TC-Lk4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="98"/>
+            <point key="canvasLocation" x="2229" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1uk-ZF-T44">
